@@ -7,7 +7,12 @@ using Images
 function iteracao_mandelbrot(cx, cy; max_iter = 40)
   iter = 0
 
-  # AQUI
+  x = y = 0.0
+  for inter = 0:40
+    m,n = x,y
+    x = m^2 - n^2 + cx
+    y = 2mn + cy
+  end
 
   if x^2 + y^2 < 4
     return false, 0
