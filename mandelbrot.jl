@@ -5,19 +5,18 @@ using Images
 
 # z^2 = x^2 + 2xyi - y^2 = (x^2 - y^2) + (2xy) i
 function iteracao_mandelbrot(cx, cy; max_iter = 40)
-  iter = 0
-
+  
   x = y = 0.0
   for inter = 0:40
     m,n = x,y
     x = m^2 - n^2 + cx
-    y = 2mn + cy
+    y = 2m*n + cy
   end
 
   if x^2 + y^2 < 4
     return false, 0
   else
-    return true, iter / max_iter
+    return true, 1
   end
 end
 
